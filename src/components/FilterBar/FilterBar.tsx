@@ -7,7 +7,7 @@ const FilterBar: React.FC = () => {
     const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
     return (
         <div>
-            <div className='bg-[#F5F5F5] flex justify-between px-7 py-3 mt-5 font-galanoReg'>
+            <div className='bg-[#F5F5F5] flex justify-between px-7 py-3  font-galanoReg'>
                 <button className='flex gap-2 text-base text-cs-pink ' onClick={() => setShowFilterModal(!showFilterModal)}>
                     <img src={filterGroup} alt="filter" />Filtreler</button>
                

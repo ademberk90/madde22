@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import FilterBox from '../FilterBox/FilterBox';
-
+import styles from "./Navbar.module.css"
 const Navbar : React.FC = () => {
   const [selectedRoute, setSelectedRoute] = useState<number>(0);
 
@@ -36,19 +36,19 @@ const Navbar : React.FC = () => {
   }
 
   return (
-    <div className='mt-10 flex flex-row justify-center items-center gap-7 px-4'>
-      <div className='invisible mr-auto'><FilterBox/></div>
-      <div className='flex gap-7' >
+    <div className='mt-10 flex flex-row justify-center items-center gap-7 px-4 items-stretch'>
+      <div className='invisible mr-auto max-lg:hidden'><FilterBox/></div>
+      <div className={`flex gap-7 max-lg:overflow-x-scroll lg:overflow-visible ${styles.scroll}`} style={{ WebkitOverflowScrolling: "touch"}}>
         {navbarData.map((item, index) => {
           return (
-            <div className='flex flex-col'>
-              <a key={item.id} href="/#" className={`text-galanoReg`} onClick={handleClickRoute(index)}>{item.label}</a>
+            <div className='flex flex-col justify-between max-lg:min-h-[40px]'>
+              <a key={item.id} href="/#" className={`text-galanoReg whitespace-nowrap`} onClick={handleClickRoute(index)}>{item.label}</a>
               <div className={`${index === selectedRoute ? "border-b-4 border-cs-pink" : ""}`}></div>
             </div>
           )
         })}
       </div>
-      <div className='ml-auto'>
+      <div className='ml-auto max-lg:hidden pb-3'>
       <FilterBox/>
       </div>
      

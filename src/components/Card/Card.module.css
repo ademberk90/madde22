@@ -1,0 +1,11 @@
+@media (max-width: 1024px) {
+  .imgBackground {
+    background: linear-gradient(180deg, black 90%, transparent 10%);
+  }
+}
+
+@media (min-width: 1024px) {
+    .imgBackground {
+      background: linear-gradient(90deg, black 40%, transparent 40%);
+    }
+  }
