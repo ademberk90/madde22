@@ -5,9 +5,11 @@ import plus from "../../assets/images/plusIcon.svg"
 import check from "../../assets/images/checkIcon.svg"
 import { DataType } from "../../@types/data"
 import styles from "./Card.module.css"
+
 interface Props {
   detail: DataType
 }
+
 const Card: React.FC<Props> = ({ detail }) => {
   const [checked, setChecked] = useState<boolean>(true);
 
@@ -37,8 +39,8 @@ const Card: React.FC<Props> = ({ detail }) => {
         </div>
       </div>
       <div className={`flex lg:items-center max-lg:justify-center ${styles.imgBackground}`} >
-        <div className='relative'>
-          <img src={preview} alt="eventphoto"  className='min-w-[200px]'></img>
+        <div className='relative w-full'>
+          <img src={preview} alt="eventphoto"  className='min-w-[200px] w-11/12 m-auto'></img>
           <div className={`text-white absolute top-3 -left-4 px-5 font-galanoBold text-sm
               ${detail.category === 'Sinema' ? 'bg-[#F07266]' : ''}
               ${detail.category === 'Tiyatro' ? 'bg-[#FF0D87]' : ''}

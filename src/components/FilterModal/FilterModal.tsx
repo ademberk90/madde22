@@ -42,9 +42,7 @@ const FilterModal: React.FC = () => {
         }
     ];
 
-
     const handleClickLocationCbx = (item: string) => (e: React.MouseEvent<HTMLInputElement> | undefined): void => {
-       console.log("123");
         if (!selectedLocation.includes(item.toLowerCase())) {
             setSelectedLocation([...selectedLocation, item.toLowerCase()]);
         }
@@ -66,7 +64,7 @@ const FilterModal: React.FC = () => {
 
 
 return (
-    <div className='absolute  bg-white flex flex-col px-9 py-9 z-10 gap-5 left-10 drop-shadow-2xl'>
+    <div className='absolute  bg-white flex flex-col px-9 py-9 z-10 gap-5 drop-shadow-2xl min-w-[290px] top-3'>
         <div className='font-galanoReg'>Etkinlik Mekanı</div>
         <div className='flex flex-col gap-3'>
             {locationData.map(item => {
