@@ -50,7 +50,7 @@ const Card: React.FC<Props> = ({ detail }) => {
         </div>
       </div>
       <div className='flex lg:flex-row max-lg:flex-col gap-5 font-galanoReg'>
-        <div className='ml-5 flex flex-col gap-2 pt-3 text-lg'>
+        <div className='ml-5 flex flex-col gap-2 py-3 text-lg'>
           <div >
             {detail.title}
           </div>
