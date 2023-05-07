@@ -1,5 +1,10 @@
 import React from 'react'
 import callendar from "../../assets/images/Callendar.svg"
+//Merhabalar,
+
+//Öncelikli olarak başvurumu dikkate aldığınız için teşekkür ederim. Aktif olarak çalıştığım için ve hafta sonu önceden planlanmış bir şehir dışı aile ziyaretim olduğu için verilen kısıtlı sürede projeyi yetiştirmem zor gibi gözüküyor. Sizlerinde onayı olursa 1-2 gün ek süre istemekteyim. Şu ana kadar yapmış olduğum geliştirmelerin repo linki: github , önizleme linki: netlify.
+
+//İyi Çalışmalar.
 
 const FilterBar: React.FC = () => {
     return (

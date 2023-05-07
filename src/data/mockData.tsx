@@ -19,7 +19,7 @@ export const data : DataType[]  = [
         location: "Maximum UNIQ Hall",
         description: " 1978 yılında ilk kez İstanbul Şehir Tiyatrolarında bu oyunda aşçı Lütfü Usta’yı canlandıran Şener Şen, 40 yıl aradan sonra aynı rolde ve genç bir.... Detaylı Bilgi",
         date: "27 Eylül Salı 21.15",
-        category:"Konser"
+        category:"Stand Up"
     },
     {
         title: "Sinema Keyfi Rifki's Festival",

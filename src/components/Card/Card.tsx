@@ -16,7 +16,7 @@ const Card: React.FC<Props> = ({ detail }) => {
   return (
     <div className='flex font-galanoReg border-[#DEDEDE] border-2 pr-4'>
       <div className='flex gap-3' style={{ background: "linear-gradient(90deg, black 60%, transparent 50%)" }}>
-        <div className='text-cs-pink flex flex-col items-center justify-center px-5'>
+        <div className='text-cs-pink flex flex-col items-center justify-center px-5 font-galanoReg'>
           <div>
             {dateArr[0]}
           </div>
@@ -31,20 +31,25 @@ const Card: React.FC<Props> = ({ detail }) => {
           </div>
         </div>
         <div className='relative flex items-center'>
-          <div className='text-white bg-indigo-500 absolute top-8 -left-4 px-5'>{detail.category}</div>
+          <div className={`text-white absolute top-8 -left-4 px-5 font-galanoBold text-sm
+              ${detail.category === 'Sinema' ? 'bg-[#F07266]': ''}
+              ${detail.category === 'Tiyatro' ? 'bg-[#FF0D87]': ''}
+              ${detail.category === 'Stand Up' ? 'bg-[#F19653]': ''}`}>
+                {detail.category.toUpperCase()}
+            </div>
           <img src={preview} alt="eventphoto" width={300} className='min-w-[200px]'></img>
         </div>
       </div>
-      <div className='flex gap-5'>
-        <div className='ml-5 flex flex-col gap-2 pt-3'>
+      <div className='flex gap-5 font-galanoReg'>
+        <div className='ml-5 flex flex-col gap-2 pt-3 text-lg'>
           <div >
             {detail.title}
           </div>
-          <div className='text-[#9C9C9C] flex gap-4'>
+          <div className='text-[#9C9C9C] flex gap-4 text-sm'>
             <img src={map} alt="" />
             {detail.location}
           </div>
-          <div>
+          <div className='text-base'>
             {detail.description}
           </div>
         </div>
