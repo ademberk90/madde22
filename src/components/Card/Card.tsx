@@ -5,14 +5,16 @@ import plus from "../../assets/images/plusIcon.svg"
 import check from "../../assets/images/checkIcon.svg"
 import { DataType } from "../../@types/data"
 
-
 interface Props {
   detail: DataType
 }
 const Card: React.FC<Props> = ({ detail }) => {
   const [checked, setChecked] = useState<boolean>(true);
 
-  const dateArr = detail.date.split(" ");
+  const date = new Date(detail.date);
+  const localDateString = date.toLocaleString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' });
+  const dateArr = localDateString.split(" ");
+  
   return (
     <div className='flex font-galanoReg border-[#DEDEDE] border-2 pr-4'>
       <div className='flex gap-3' style={{ background: "linear-gradient(90deg, black 60%, transparent 50%)" }}>
@@ -27,7 +29,7 @@ const Card: React.FC<Props> = ({ detail }) => {
             {dateArr[2]}
           </div>
           <div>
-            {dateArr[3]}
+            {dateArr[3].substring(0, dateArr[3].length-3)}
           </div>
         </div>
         <div className='relative flex items-center'>
@@ -57,7 +59,7 @@ const Card: React.FC<Props> = ({ detail }) => {
           <button className='bg-cs-pink text-white py-4 px-2'>Bilet Al</button>
           <div className='flex'>
             <button className='flex items-center gap-2' onClick={() => setChecked(!checked)}>
-              <img src={checked ? check : plus} width={22} ></img>
+              <img src={checked ? check : plus} width={22} alt="check"></img>
               {checked ? "Takvime Eklendi" : "Takvime Ekle"}
             </button>
           </div>

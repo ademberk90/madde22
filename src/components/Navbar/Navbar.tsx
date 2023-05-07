@@ -36,7 +36,7 @@ const Navbar : React.FC = () => {
   }
 
   return (
-    <div className='mt-10 flex flex-row justify-center items-center gap-7'>
+    <div className='mt-10 flex flex-row justify-center items-center gap-7 px-4'>
       <div className='invisible mr-auto'><FilterBox/></div>
       <div className='flex gap-7' >
         {navbarData.map((item, index) => {

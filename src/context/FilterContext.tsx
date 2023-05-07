@@ -9,10 +9,15 @@ interface Props {
 
 const FilterProvider: React.FC<Props> = ({ children }) => {
   const [filterText, setFilterText] = React.useState<string>("");
-
+  const [selectedLocation, setSelectedLocation] = React.useState<string[]>([]);
+  const [selectedDate, setSelectedDate] = React.useState<number[]>([]);
   const values = {
     filterText,
-    setFilterText
+    setFilterText,
+    selectedLocation,
+    setSelectedLocation,
+    selectedDate,
+    setSelectedDate
   }
 
   return <FilterContext.Provider value={values}>{children}</FilterContext.Provider>;
