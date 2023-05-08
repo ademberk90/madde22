@@ -38,9 +38,9 @@ const HomePage :React.FC = () => {
       <Navbar/>
       <FilterBar/>
       <div className='flex flex-col gap-7 p-5 max-w-6xl m-auto'>
-        {filteredData.map(item => {
+        {filteredData.map((item,index) => {
           return(
-            <Card detail={item} />
+            <Card key={index} detail={item} />
           )
         })}
       </div>

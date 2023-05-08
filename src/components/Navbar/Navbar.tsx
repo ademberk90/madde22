@@ -41,7 +41,7 @@ const Navbar : React.FC = () => {
       <div className={`flex gap-7 max-lg:overflow-x-scroll lg:overflow-visible ${styles.scroll}`} style={{ WebkitOverflowScrolling: "touch"}}>
         {navbarData.map((item, index) => {
           return (
-            <div className='flex flex-col justify-between max-lg:min-h-[40px]'>
+            <div key={item.id} className='flex flex-col justify-between max-lg:min-h-[40px]'>
               <a key={item.id} href="/#" className={`text-galanoReg whitespace-nowrap`} onClick={handleClickRoute(index)}>{item.label}</a>
               <div className={`${index === selectedRoute ? "border-b-4 border-cs-pink" : ""}`}></div>
             </div>

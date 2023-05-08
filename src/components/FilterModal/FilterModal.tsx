@@ -78,7 +78,7 @@ return (
         <div className='flex flex-col gap-3'>
             {locationData.map(item => {
                 return (
-                    <div className='flex gap-4'>
+                    <div key={item.id} className='flex gap-4'>
                         <input className='w-5 accent-cs-pink' type='checkbox' checked={selectedLocation.includes(item.label.toLowerCase())} onClick={handleClickLocationCbx(item.label)} />
                         <div >{item.label}</div>
                     </div>
@@ -89,7 +89,7 @@ return (
         <div className='flex flex-col gap-3'>
             {dateData.map(item => {
                 return (
-                    <div className='flex gap-4'>
+                    <div key={item.id} className='flex gap-4'>
                         <input className='w-5 accent-cs-pink' type='checkbox' checked={selectedDate.includes(item.id)} onClick={handleClickDateCbx(item.id)} />
                         <div >{item.label}</div>
                     </div>
