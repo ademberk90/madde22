@@ -6,7 +6,7 @@ import check from "../../assets/images/checkIcon.svg"
 import { DataType } from "../../@types/data"
 import styles from "./Card.module.css"
 
-interface Props {
+type Props =  {
   detail: DataType
 }
 

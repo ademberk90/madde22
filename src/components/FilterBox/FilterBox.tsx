@@ -1,14 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import search from "../../assets/images/Search.svg"
 import { useFilter } from '../../context/FilterContext'
 
 
 const FilterBox: React.FC = () => {
   const filter = useFilter();
-  if (!filter) {
-    return null;
-  }
-  const { filterText, setFilterText } = filter;
+
+  const { setFilterText } = filter;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilterText(e.target.value);

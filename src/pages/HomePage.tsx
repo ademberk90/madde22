@@ -5,14 +5,13 @@ import Card from '../components/Card/Card'
 import { data } from '../data/mockData'
 import { useFilter } from '../context/FilterContext'
 import FilterBar from '../components/FilterBar/FilterBar'
+import { DataType } from '../@types/data'
 
 const HomePage :React.FC = () => {
   const filter = useFilter();
-  if (!filter) {
-    return null;
-  }
+
   const { filterText, selectedLocation, selectedDate } = filter;
-  let filteredData = data;
+  let filteredData : DataType[] = data;
 
   if(filterText.length > 2) {
      filteredData = filteredData.filter(item => item.title.toLowerCase().includes(filterText.toLowerCase()))  

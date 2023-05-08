@@ -1,46 +1,55 @@
 import React from 'react'
 import { useFilter } from '../../context/FilterContext';
 
+interface Location{
+    id: number;
+    label: string
+}
+
+interface Date{
+    id: number;
+    label: string
+}
+
+const locationData: Location[] = [
+    {
+        id: 0,
+        label: "Maximum Uniq Hall"
+    },
+    {
+        id: 1,
+        label: "Maximum Uniq Box"
+    },
+    {
+        id: 2,
+        label: "Maximum Uniq Lounge"
+    },
+    {
+        id: 3,
+        label: "Maximum Uniq Açıkhava"
+    },
+    {
+        id: 4,
+        label: "Bahçe Fuaye"
+    }
+];
+
+const dateData: Date[] = [
+    {
+        id: 0,
+        label: "Güncel Etkinlikler"
+    },
+    {
+        id: 1,
+        label: "Geçmiş Etkinlikler"
+    }
+];
+
 const FilterModal: React.FC = () => {
     const filter = useFilter();
-    if (!filter) {
-        return null;
-    }
+
     const { selectedLocation, setSelectedLocation, selectedDate, setSelectedDate } = filter;
 
-    const locationData = [
-        {
-            id: 0,
-            label: "Maximum Uniq Hall"
-        },
-        {
-            id: 1,
-            label: "Maximum Uniq Box"
-        },
-        {
-            id: 2,
-            label: "Maximum Uniq Lounge"
-        },
-        {
-            id: 3,
-            label: "Maximum Uniq Açıkhava"
-        },
-        {
-            id: 4,
-            label: "Bahçe Fuaye"
-        }
-    ];
-
-    const dateData = [
-        {
-            id: 0,
-            label: "Güncel Etkinlikler"
-        },
-        {
-            id: 1,
-            label: "Geçmiş Etkinlikler"
-        }
-    ];
 
     const handleClickLocationCbx = (item: string) => (e: React.MouseEvent<HTMLInputElement> | undefined): void => {
         if (!selectedLocation.includes(item.toLowerCase())) {

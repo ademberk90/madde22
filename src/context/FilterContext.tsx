@@ -23,7 +23,7 @@ const FilterProvider: React.FC<Props> = ({ children }) => {
   return <FilterContext.Provider value={values}>{children}</FilterContext.Provider>;
 };
 
-const useFilter = () => useContext(FilterContext);
+const useFilter = () => useContext(FilterContext) as FilterContextType;
 
 
 export {FilterProvider, useFilter};
